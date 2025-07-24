@@ -6,11 +6,12 @@ pipeline {
   }
 
   stages {
-    stage('Clone Repo') {
-      steps {
-        git 'https://github.com/Thaanees-RM/multi-service-app-main.git'
-      }
-    }
+    // REMOVE THIS STAGE — Jenkins already checks out the repo automatically
+    // stage('Clone Repo') {
+    //   steps {
+    //     git 'https://github.com/Thaanees-RM/multi-service-app-main.git'
+    //   }
+    // }
 
     stage('Build Containers') {
       steps {
