@@ -1,0 +1,15 @@
+# Use lightweight Node Alpine image for smaller image size and faster build
+FROM node:20-alpine
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy package files first for caching
+COPY package*.json ./
+
+# Install only production dependencies to keep image lean
+RUN npm ci --production
+
+# Explanation:
+# - 'npm ci' installs exact versions from package-lock.json
+# - '--production' flag avoids installing devDependencies, optimizing image size
