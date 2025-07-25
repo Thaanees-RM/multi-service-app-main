@@ -4,9 +4,9 @@ services:
   frontend:
     image: multi-service-app-frontend:green
     ports:
-      - "8081:80"  # Different port to avoid conflict
+      - "8081:80"  # Use 8081 on host to avoid conflict with blue frontend on 80
 
   backend:
     image: multi-service-app-backend:green
     ports:
-      - "3101:3000"  # Different port
+      - "3101:3000"  # Use 3101 on host to avoid conflict with blue backend on 3100
