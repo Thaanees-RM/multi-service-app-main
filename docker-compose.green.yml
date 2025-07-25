@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: multi-service-app-frontend:green
+    ports:
+      - "8081:80"  # Different port to avoid conflict
+
+  backend:
+    image: multi-service-app-backend:green
+    ports:
+      - "3101:3000"  # Different port
