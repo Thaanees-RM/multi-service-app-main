@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Clone Repository') {
       steps {
-        git url: 'https://github.com/Thaanees-RM/multi-service-app-main.git'
+        git branch: 'main', url: 'https://github.com/Thaanees-RM/multi-service-app-main.git'
       }
     }
 
