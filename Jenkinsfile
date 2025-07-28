@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         DOCKER_COMPOSE_COMMON = './docker-compose.yml'
-        DOCKER_COMPOSE_BLUE = './docker-compose.blue.yml'
-        DOCKER_COMPOSE_GREEN = './docker-compose.green.yml'
+        DOCKER_COMPOSE_BLUE = './blue/docker-compose.blue.yml'
+        DOCKER_COMPOSE_GREEN = './green/docker-compose.green.yml'
         BLUE_PORT = '8080'
         GREEN_PORT = '8081'
         PROXY_SERVICE = 'proxy'
