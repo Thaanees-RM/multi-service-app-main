@@ -66,4 +66,9 @@ app.delete("/api/users/:id", async (req, res) => {
   res.json({ message: "User deleted" });
 });
 
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
+
 app.listen(5000, () => console.log("🚀 Server running on port 5000"));

@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ../shared/frontend
+    container_name: frontend_blue
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3001:3000"
+    networks:
+      - app-net
+
+  backend:
+    build: ../shared/backend
+    container_name: backend_blue
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "5001:5000"
+    networks:
+      - app-net
+
+  mongo:
+    image: mongo
+    container_name: mongo_blue
+    volumes:
+      - mongo-data-blue:/data/db
+    networks:
+      - app-net
+
+  redis:
+    image: redis
+    container_name: redis_blue
+    networks:
+      - app-net
+
+networks:
+  app-net:
+
+volumes:
+  mongo-data-blue:
+
